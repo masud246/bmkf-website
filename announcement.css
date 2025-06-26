@@ -1,0 +1,313 @@
+/* ========== Reset & Base Style ========== */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Noto Sans Bengali', sans-serif;
+}
+
+body {
+  background-color: #f9fdf9;
+  color: #333;
+}
+
+/* ========== Header ========== */
+header {
+  background-color: #117744;
+  padding: 10px 20px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+}
+
+.logo-title {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.logo-title img {
+  height: 50px;
+  border-radius: 50%;
+}
+
+.logo-title h1 {
+  font-size: 20px;
+  color: white;
+}
+
+/* ========== Navigation Menu ========== */
+nav {
+  background-color: #117744;
+  text-align: center;
+  padding: 10px;
+}
+
+nav a {
+  text-decoration: none;
+  color: green;
+  font-weight: bold;
+  display: inline-flex; /* flexbox চালু করা হলো */
+  justify-content: center; /* ডানে-বামে সেন্টার */
+  align-items: center;     /* উপর-নিচ সেন্টার */
+  width: 140px;
+  height: 50px;
+  margin: 3px;
+  border-radius: 15px;
+  box-shadow: 0px 5px 12px blue;
+  background-color: white;
+  margin-top: 10px;
+}
+
+nav a:hover {
+  background-color: #dfffe0;
+}
+
+h2 {
+  color: #117744;
+  text-align: center;
+  margin-top: 30px;
+  font-size: 20px;
+}
+
+/* ========== Banner Image ========== */
+.banner {
+  width: 100%;
+  height: auto;
+  border: 2px solid blue;
+  border-radius: 0px;
+  display: block;
+  margin: 0 auto;
+}
+
+/*========hadish marque=======*/
+  .hadith-container {
+  align-items: center;     /* উপর-নিচ সেন্টার */
+  transition: transform 0.2s ease;
+  font-weight: bold;
+  color: darkgreen;
+    width: 100%;
+    overflow: hidden;
+    background-color: #f5fff5;
+    margin-top: 5px;
+    padding: 8px;
+    border: 0px solid ;
+    position: relative;
+    height: 40px;
+  }
+
+  .hadith-text {
+    display: inline-block;
+    white-space: nowrap;
+    padding-left: 100%;
+    font-size: 18px;
+    color: darkgreen;
+    animation: scrollLeft 20s linear;
+  }
+
+  @keyframes scrollLeft {
+    from {
+      transform: translateX(0%);
+    }
+    to {
+      transform: translateX(-100%);
+    }
+  }
+/* ==========Animated Button ========== */
+.animated-button {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: white;
+  padding: 12px 24px;
+  border-radius: 10px;
+  box-shadow: 0 8px 20px blue;
+  text-decoration: none;
+  transition: all 0.2s ease;
+  overflow: hidden;
+  position: relative;
+  user-select: none;
+  transform: scale(1);
+  margin: 20px auto;          /* স্ক্রিনের মাঝখানে আনবে */
+  width: fit-content;         /* কনটেন্ট অনুযায়ী প্রস্থ */
+  max-width: 90%;             /* ছোট স্ক্রিনেও ভালো দেখাবে */
+}
+
+.icon-img {
+  width: 40px;
+  height: 40px;
+  margin-right: 10px;
+  transition: transform 0.3s ease;
+  border-radius: 50%;
+  object-fit: cover;
+}
+
+.animated-button:active .icon-img {
+  transform: rotate(360deg);
+}
+
+.text {
+  color: #E1136E;
+  font-size: 20px;
+  font-weight: bold;
+}
+
+/* Hover effect */
+.animated-button:hover,
+.animated-button:active {
+  box-shadow: 0 10px 25px red;
+  transform: scale(1.03);
+}
+
+
+/* ========== Profile Section ========== */
+.image-row {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+  flex-wrap: wrap;
+  padding: 15px;
+  text-align: center;
+}
+
+.profile {
+  max-width: 200px;
+}
+
+.profile img {
+  width: 100%;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px blue;
+}
+
+.profile p {
+  margin-top: 5px;
+  font-size: 16px;
+  color: #117744;
+  font-weight: bold;
+}
+
+.position {
+  font-size: 14px;
+  color: #555;
+  margin-top: 0;
+}
+/*===========top right bar============*/
+.top-right-bar {
+      display: flex;
+      justify-content: flex-end;
+      align-items: center;
+      background-color: #117744 ;
+      color: white;
+      padding: 5px 20px;
+      gap: 20px;
+    }
+
+    .social-icons img {
+      width: 20px;
+      height: 20px;
+      margin:  5px;
+      cursor: pointer;
+      transition: transform 0.2s;
+      filter: brightness(100%) invert(0);
+    }
+
+    .social-icons img:hover {
+      transform: scale(1.2);
+    }
+/*============language select=============*/
+    .language-select {
+      position: relative;
+      display: inline-block;
+      width: 120px;
+      border-radius: 15px;
+      overflow: hidden;
+      background: linear-gradient( 90deg,blue,darkgreen);
+      box-shadow: blue;
+    }
+
+    .language-select select {
+      width: 100%;
+      padding: 8px 40px 8px 15px;
+      border: none;
+      font-size: 16px;
+      color: white;
+      background-color: transparent;
+      cursor: pointer;
+      appearance: none;
+    }
+
+    .language-select::after {
+      content: '\25BC';
+      position: absolute;
+      right: 15px;
+      top: 50%;
+      transform: translateY(-50%);
+      pointer-events: none;
+      color: yellow;
+      font-size: 12px;
+    }
+
+    nav {
+      background-color: transparent;
+      text-align: center;
+      padding: 10px 0;
+    }
+
+    nav a {
+      margin: 5px;
+      text-decoration: none;
+      color: green;
+      font-weight: bold;
+    }
+
+    .lang {
+      display: none;
+    }
+
+    .lang.active {
+      display: inline;
+    }
+
+
+/*================our activities===============*/
+.our-activities {
+  background: white;
+  padding: 1rem;
+  align-items: center;     /* উপর-নিচ সেন্টার */
+  border-radius: 8px;
+  box-shadow: 0 5px 8px blue;
+  transition: transform 0.2s ease;
+  font-family: 'Noto Sans Bengali', sans-serif;
+  font-weight: bold;
+  font-size: 25px;
+  color: darkgreen;
+}
+    /* ========== Footer ========== */
+footer {
+    background-color: white;
+    color: black;
+    font-family: 'Noto Sans Bengali', sans-serif;
+    padding: 1.5rem 1rem;
+    text-align: center;
+    font-size: 1rem;
+    line-height: 1.6;
+  }
+
+  footer a {
+    color: #006400; /* ডার্ক গ্রীন */
+    text-decoration: none;
+    margin: 0 0.5rem;
+    font-size: 14px;
+  }
+
+  .footer-links {
+    margin-top: 0.5rem;
+  }
+
+  @media (max-width: 600px) {
+    footer {
+      font-size: 0.9rem;
+    }
+  }

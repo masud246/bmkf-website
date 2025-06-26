@@ -1,0 +1,89 @@
+  <!DOCTYPE html>
+<html lang="bn">
+<head>
+  <meta charset="UTF-8">
+  <title>দাতাদের তালিকা</title>
+  <style>
+    body {
+      font-family: 'Noto Sans Bengali', sans-serif;
+      background-color: #f9f9f9;
+      padding: 20px;
+      color: #333;
+    }
+
+    h2 {
+      text-align: center;
+      color: #e91e63;
+      margin-bottom: 20px;
+    }
+
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      background: white;
+      box-shadow: 0 0 10px rgba(0,0,0,0.1);
+    }
+
+    th, td {
+      padding: 12px;
+      border: 1px solid #ddd;
+      text-align: center;
+    }
+
+    th {
+      background-color: #e91e63;
+      color: white;
+    }
+
+    tbody tr:hover {
+      background-color: #f2f2f2;
+    }
+  </style>
+</head>
+<body>
+  <h2>দাতাদের তালিকা</h2>
+  <table>
+    <thead>
+      <tr>
+        <th>নাম</th>
+        <th>ফোন</th>
+        <th>ইমেইল</th>
+        <th>পরিমাণ</th>
+        <th>ট্রানজেকশন আইডি</th>
+      </tr>
+    </thead>
+    <tbody id="donorList">
+      <tr><td colspan="5">লোড হচ্ছে...</td></tr>
+    </tbody>
+  </table>
+
+  <script>
+    fetch("https://script.google.com/macros/s/AKfycbw9DRPWDBKbG3-T7PiKYMfthVg17Ahxdv_z9lLbG0bVIAxbZLfmY0WdKKekMQSv9eO-/exec")
+      .then(res => res.json())
+      .then(data => {
+        const tbody = document.getElementById("donorList");
+        tbody.innerHTML = ""; // Clear loading row
+
+        data.forEach(donor => {
+          const row = document.createElement("tr");
+          row.innerHTML = `
+            <td>${donor.name}</td>
+            <td>${donor.phone}</td>
+            <td>${donor.email}</td>
+            <td>${donor.amount} ৳</td>
+            <td>${donor.trxid}</td>
+          `;
+          tbody.appendChild(row);
+        });
+
+        if (data.length === 0) {
+          tbody.innerHTML = `<tr><td colspan="5">কোনো যাচাইকৃত দাতা পাওয়া যায়নি</td></tr>`;
+        }
+      })
+      .catch(error => {
+        document.getElementById("donorList").innerHTML = `<tr><td colspan="5">ডাটা লোড করতে ব্যর্থ হয়েছে</td></tr>`;
+        console.error("Error loading donor data:", error);
+      });
+  </script>
+</body>
+</html>

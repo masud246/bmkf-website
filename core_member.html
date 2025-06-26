@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="bn">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>বামনডাঙ্গা মানব কল্যাণ ফাউন্ডেশন</title>
+  <link rel="stylesheet" href="style.css">
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+Bengali&display=swap" rel="stylesheet">
+</head>
+<body>
+    <!-- টপ বার -->
+  <div class="top-right-bar">
+    <div class="social-icons">
+      <a href="#"><img src="https://cdn-icons-png.flaticon.com/512/733/733547.png" alt="Facebook" title="Facebook"></a>
+      
+      <a href="#"><img src="https://cdn-icons-png.flaticon.com/512/1384/1384060.png" alt="YouTube" title="YouTube"></a>
+      
+      <a href="mailto:bmkf.official@gmail.com">
+  <img src="https://cdn-icons-png.flaticon.com/512/732/732200.png" alt="Email" title="Email">
+</a>
+      <a href="#"><img src="https://cdn-icons-png.flaticon.com/512/724/724664.png" alt="Phone" title="Phone"></a>
+    </div>
+
+    <div class="language-select">
+      <select id="languageSelect">
+        <option value="bn" selected>বাংলা</option>
+        <option value="en">English</option>
+      </select>
+    </div>
+  </div>
+  <header>
+            <div class="logo-title">
+      <img src="logo.png" alt="Foundation Logo">
+      <h1>বামনডাঙ্গা মানব কল্যাণ ফাউন্ডেশন</h1>
+    </div>
+  <nav>
+<!-- ভাষা চেঞ্জ স্ক্রিপ্ট -->
+<script>
+  const languageSelect = document.getElementById('languageSelect');
+
+  // ভাষা পরিবর্তনের সময় localStorage-এ সেট করুন
+  languageSelect.addEventListener('change', function () {
+    const selectedLang = this.value;
+    localStorage.setItem('language', selectedLang); // ✅ স্টোর করল
+
+    document.querySelectorAll('.lang').forEach(el => {
+      el.classList.remove('active');
+    });
+    document.querySelectorAll(`.lang.${selectedLang}`).forEach(el => {
+      el.classList.add('active');
+    });
+  });
+
+  // পেজ লোড হলে localStorage থেকে ভাষা রিস্টোর করুন
+  window.addEventListener('DOMContentLoaded', function () {
+    const savedLang = localStorage.getItem('language') || 'bn'; // ডিফল্ট: বাংলা
+    languageSelect.value = savedLang;
+
+    document.querySelectorAll('.lang').forEach(el => {
+      el.classList.remove('active');
+    });
+    document.querySelectorAll(`.lang.${savedLang}`).forEach(el => {
+      el.classList.add('active');
+    });
+  });
+</script>
+    <!-- বাংলা -->
+    <span class="lang bn active"><a href="index.html">হোম</a></span>
+    <span class="lang bn active"><a href="activities.html">কার্যক্রম</a></span>
+    <span class="lang bn active"><a href="donate.html">দান করুন</a></span>
+    <span class="lang bn active"><a href="registration.html">রেজিস্ট্রেশন</a></span>
+    <span class="lang bn active"><a href="constitution.html">সংবিধান</a></span>
+    <span class="lang bn active"><a href="core_member.html">মূল সদস্য</a></span>
+    <span class="lang bn active"><a href="about.html">আমাদের সম্পর্কে</a></span>
+    <span class="lang bn active"><a href="contact.html">যোগাযোগ</a></span>
+
+    <!-- English -->
+    <span class="lang en"><a href="index.html">Home</a></span>
+    <span class="lang en"><a href="activities.html">Activities</a></span>
+    <span class="lang en"><a href="donate.html">Donate</a></span>
+    <span class="lang en"><a href="registration.html">Registration</a></span>
+    <span class="lang en"><a href="constitution.html">Constitution</a></span>
+    <span class="lang en"><a href="core_member.html">Core Members</a></span>
+    <span class="lang en"><a href="about.html">About Us</a></span>
+    <span class="lang en"><a href="contact.html">Contact</a></span>
+  </nav>
+  </header>
+  <main>
+    <div class="image-row">
+      <div class="profile">
+        <img src="image1.png" alt="বর্তমান আমির">
+        <p>মোহাম্মদ মাসুদ রানা</p>
+        <div class="position">বর্তমান আমির</div>
+      </div>
+
+      <div class="profile">
+        <img src="image2.png" alt="নায়েবে আমির">
+        <p>হাফেজ মোহাম্মদ নুর আলম সিদ্দিকী</p>
+        <div class="position">নায়েবে আমির</div>
+      </div>
+
+      <div class="profile">
+        <img src="image3.png" alt="খাজিন">
+        <p>মোহাম্মদ বেলাল হোসেন</p>
+        <div class="position">খাজিন</div>
+      </div>
+  </main>
+
+  <footer>
+    <div>
+    স্বত্ব © 2025 
+    <a href="https://example.com" target="_blank"><strong>বামনডাঙ্গা মানব কল্যাণ ফাউন্ডেশন</strong></a>- সর্ব স্বত্ব সংরক্ষিত ।
+    </div>
+  <div class="footer-links">
+    <a href="terms.html">পরিষেবা শর্তাবলী</a> |
+    <a href="privacy.html">গোপনীয়তা নীতি</a>
+  </div>
+  </footer>
+
+</body>
+</html>

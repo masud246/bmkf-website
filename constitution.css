@@ -1,0 +1,197 @@
+/* ========== Reset & Base Style ========== */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Noto Sans Bengali', sans-serif;
+}
+
+body {
+  background-color: #f9fdf9;
+  color: #333;
+}
+
+/* ========== Header ========== */
+header {
+  background-color: #117744;
+  padding: 10px 20px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+}
+h1 {
+  color: #117744;
+  font-size: 25px;
+  text-align: center;
+}
+.logo-title {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.logo-title img {
+  height: 50px;
+  border-radius: 50%;
+}
+
+.logo-title h1 {
+  font-size: 20px;
+  color: white;
+}
+
+/* ========== Top Right Bar ========== */
+.top-right-bar {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  background-color: #117744;
+  color: white;
+  padding: 5px 20px;
+  gap: 20px;
+}
+
+.social-icons img {
+  width: 20px;
+  height: 20px;
+  margin: 5px;
+  cursor: pointer;
+  transition: transform 0.2s;
+  filter: brightness(100%) invert(0);
+}
+
+.social-icons img:hover {
+  transform: scale(1.2);
+}
+.lang {
+  display: none;
+}
+
+.lang.active {
+  display: inline;
+}
+
+.language-select {
+  position: relative;
+  display: inline-block;
+  width: 120px;
+  border-radius: 15px;
+  overflow: hidden;
+  background: linear-gradient(90deg, blue, darkgreen);
+}
+
+.language-select select {
+  width: 100%;
+  padding: 8px 40px 8px 15px;
+  border: none;
+  font-size: 16px;
+  color: white;
+  background-color: transparent;
+  cursor: pointer;
+  appearance: none;
+}
+
+.language-select::after {
+  content: '\25BC';
+  position: absolute;
+  right: 15px;
+  top: 50%;
+  transform: translateY(-50%);
+  pointer-events: none;
+  color: yellow;
+  font-size: 12px;
+}
+
+/* ========== Navigation Menu ========== */
+nav {
+  background-color: transparent;
+  text-align: center;
+  padding: 10px 0;
+}
+
+nav a {
+  text-decoration: none;
+  color: green;
+  font-weight: bold;
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  width: 140px;
+  height: 50px;
+  margin: 5px;
+  border-radius: 15px;
+  box-shadow: 0px 5px 12px blue;
+  background-color: white;
+  transition: background-color 0.3s;
+}
+
+nav a:hover {
+  background-color: #dfffe0;
+}
+
+.lang {
+  display: none;
+}
+
+.lang.active {
+  display: inline;
+}
+
+/* ========== Main Section ========== */
+main {
+  padding: 30px;
+  text-align: center;
+  background-color: white;
+  margin: 20px auto;
+  max-width: 900px;
+  border-radius: 12px;
+}
+
+h2 {
+  color: #117744;
+  text-align: center;
+  margin-bottom: 6px;
+  font-size: 20px;
+}
+
+/* ========== Activities Section ========== */
+.section {
+  background: white;
+  text-align: left;
+  padding: 25px;
+  margin-top: 10px;
+  border-radius: 5px;
+  box-shadow: 0 5px 8px blue;
+  transition: transform 0.2s ease;
+  font-size: 18px;
+  color: deeppink;
+}
+
+  /* ========== Footer ========== */
+footer {
+    background-color: white;
+    color: black;
+    font-family: 'Noto Sans Bengali', sans-serif;
+    padding: 1.5rem 1rem;
+    text-align: center;
+    font-size: 1rem;
+    line-height: 1.6;
+  }
+
+  footer a {
+    color: #006400; /* ডার্ক গ্রীন */
+    text-decoration: none;
+    margin: 0 0.5rem;
+    font-size: 14px;
+  }
+
+  .footer-links {
+    margin-top: 0.5rem;
+  }
+
+  @media (max-width: 600px) {
+    footer {
+      font-size: 0.9rem;
+    }
+  }
